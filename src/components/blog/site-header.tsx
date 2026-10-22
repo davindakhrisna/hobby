@@ -18,14 +18,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { MenuIcon, TerminalIcon, CpuIcon, LayersIcon } from "lucide-react";
+import { MenuIcon, TerminalIcon, CpuIcon, LayersIcon, UserIcon } from "lucide-react";
 
 interface SiteHeaderProps {
   docNumber?: string;
   revision?: string;
+  activeNav?: "portfolio" | "hobby" | "about";
 }
 
-export function SiteHeader({ docNumber = "DOC-IDX-0001", revision = "REV A" }: SiteHeaderProps) {
+export function SiteHeader({ docNumber = "DOC-SYS-0001", revision = "REV A", activeNav }: SiteHeaderProps) {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -43,7 +44,7 @@ export function SiteHeader({ docNumber = "DOC-IDX-0001", revision = "REV A" }: S
             <span className="tracking-tighter">kryisnn // engineering</span>
           </Link>
           <Badge variant="outline" className="hidden sm:inline-flex text-[10px] font-mono uppercase rounded-none border-border px-1.5 py-0 text-muted-foreground">
-            Datasheets
+            Systems Portfolio
           </Badge>
         </div>
 
@@ -53,14 +54,36 @@ export function SiteHeader({ docNumber = "DOC-IDX-0001", revision = "REV A" }: S
             <NavigationMenuList className="gap-1">
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/" className="font-mono text-xs uppercase tracking-wider">
-                    Archive Index
+                  <Link
+                    href="/"
+                    className={`font-mono text-xs uppercase tracking-wider ${
+                      activeNav === "portfolio" ? "text-foreground font-semibold" : "text-muted-foreground"
+                    }`}
+                  >
+                    Portfolio & Systems
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/about" className="font-mono text-xs uppercase tracking-wider">
+                  <Link
+                    href="/hobby"
+                    className={`font-mono text-xs uppercase tracking-wider ${
+                      activeNav === "hobby" ? "text-foreground font-semibold" : "text-muted-foreground"
+                    }`}
+                  >
+                    Datasheets / Blog
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                  <Link
+                    href="/about"
+                    className={`font-mono text-xs uppercase tracking-wider ${
+                      activeNav === "about" ? "text-foreground font-semibold" : "text-muted-foreground"
+                    }`}
+                  >
                     About / Spec
                   </Link>
                 </NavigationMenuLink>
@@ -68,7 +91,7 @@ export function SiteHeader({ docNumber = "DOC-IDX-0001", revision = "REV A" }: S
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/davindakhrisna"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-mono text-xs uppercase tracking-wider text-muted-foreground hover:text-foreground"
@@ -107,7 +130,7 @@ export function SiteHeader({ docNumber = "DOC-IDX-0001", revision = "REV A" }: S
                   kryisnn // system
                 </SheetTitle>
                 <div className="font-mono text-xs text-muted-foreground">
-                  Navigation & Document Indexes
+                  Navigation & Systems Directory
                 </div>
               </SheetHeader>
               <div className="flex flex-col gap-3 py-6 font-mono text-sm">
@@ -116,8 +139,16 @@ export function SiteHeader({ docNumber = "DOC-IDX-0001", revision = "REV A" }: S
                   onClick={() => setOpen(false)}
                   className="flex items-center gap-2 py-2 text-foreground hover:translate-x-1 transition-transform"
                 >
+                  <UserIcon className="size-4" />
+                  <span>Portfolio & Systems</span>
+                </Link>
+                <Link
+                  href="/hobby"
+                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-2 py-2 text-foreground hover:translate-x-1 transition-transform"
+                >
                   <CpuIcon className="size-4" />
-                  <span>Archive Index</span>
+                  <span>Datasheets / Blog</span>
                 </Link>
                 <Link
                   href="/about"
@@ -128,19 +159,19 @@ export function SiteHeader({ docNumber = "DOC-IDX-0001", revision = "REV A" }: S
                   <span>About / Spec</span>
                 </Link>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/davindakhrisna"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 py-2 text-muted-foreground hover:text-foreground hover:translate-x-1 transition-transform"
                 >
                   <TerminalIcon className="size-4" />
-                  <span>GitHub Repository ↗</span>
+                  <span>GitHub Profile ↗</span>
                 </a>
               </div>
               <div className="mt-auto border-t border-border pt-4 font-mono text-[11px] text-muted-foreground space-y-1">
-                <div>AUTHOR: kryisnn</div>
-                <div>CLASSIFICATION: PUBLIC_SPEC</div>
-                <div>THEME: DATASHEET_V1</div>
+                <div>AUTHOR: Davinda Khrisna (kryisnn)</div>
+                <div>ROLE: Systems & Full-Stack</div>
+                <div>THEME: DATASHEET_PORTFOLIO</div>
               </div>
             </SheetContent>
           </Sheet>

@@ -1,6 +1,6 @@
 ---
 name: kryisnn-datasheet-design-system
-description: Component datasheet design language for engineering monographs and technical notes.
+description: Component datasheet design language for engineering monographs, systems portfolios, and technical notes.
 colors:
   background: "#fbfbfb"
   foreground: "#18181b"
@@ -34,6 +34,15 @@ typography:
     fontWeight: 500
     lineHeight: "1.5"
     letterSpacing: "normal"
+  caption:
+    fontFamily: "var(--font-geist-mono), monospace"
+    fontSize: "11px"
+    fontWeight: 400
+    lineHeight: "1.4"
+  badge:
+    fontFamily: "var(--font-geist-mono), monospace"
+    fontSize: "10px"
+    fontWeight: 600
 rounded:
   none: "0px"
   sm: "2px"
@@ -59,7 +68,7 @@ components:
 
 ## Overview
 
-The `kryisnn` blog interface is constructed on the visual metaphor of an electronic component engineering datasheet. It rejects generic SaaS blog cards, loud marketing gradients, and saturated hero sections. Instead, it prioritizes structured comprehension, strict typographic hierarchies, and low-cognitive-load reading ergonomics.
+The `kryisnn` portfolio and engineering monograph interface is constructed on the visual metaphor of an electronic component engineering datasheet. It rejects generic SaaS cards, loud marketing gradients, and saturated hero sections. Instead, it prioritizes structured comprehension, strict typographic hierarchies, and low-cognitive-load reading ergonomics.
 
 ## Colors
 
@@ -72,11 +81,13 @@ The `kryisnn` blog interface is constructed on the visual metaphor of an electro
 
 - **Display & Headings:** Archivo (Variable). Used for titles, section headings, and datasheet stamps.
 - **Body Measure:** Fixed 65–68 character measure to ensure ergonomic long-form reading across desktop, tablet, and mobile.
-- **Monospace:** Geist Mono. Reserved strictly for technical data, document numbers (`DOC-AGC-0104`), code, and specifications.
+- **Monospace:** Geist Mono. Reserved strictly for technical data, document numbers (`SPEC-ENG-2026`, `DOC-AGC-0104`), code, and specifications.
+- **Micro Telemetry:** 10px and 11px micro-typography used for engineering stamps, status labels, and metric readings.
 
 ## Layout
 
 - **Desktop Header:** Two-column split title block with document identifier, revision stamp, and core specifications list.
+- **Portfolio Catalog:** Engineered artifacts grid with concrete system architecture, tech stacks, and live metrics.
 - **Responsive Parts Table:** Archive catalog modeled after electronics distributor component selection tables.
 - **Post Layout:** Two-column reading layout with persistent sticky Table of Contents and fast Figure jumping index.
 
