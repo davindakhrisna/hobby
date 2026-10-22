@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "system": "kryisnn-datasheet-design-system",
+  "direction": "Component Datasheet",
+  "seedKey": "c39874b6",
+  "tokens": {
+    "colors": {
+      "background": "#fbfbfb",
+      "foreground": "#18181b",
+      "card": "#ffffff",
+      "muted": "#f4f4f5",
+      "mutedForeground": "#52525b",
+      "border": "#e4e4e7"
+    },
+    "typography": {
+      "display": "Archivo",
+      "body": "Archivo",
+      "mono": "Geist Mono"
+    },
+    "radii": {
+      "default": "0px",
+      "sm": "2px",
+      "md": "4px"
+    }
+  }
+}
